@@ -19,4 +19,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Leoglme/node
+    "url": "git+https://github.com/Leoglme/node-nlp-typescript.git"
+  },
+  "keywords": [
+    "node-nlp",
+    "typescript",
+    "ai",
+    "natural language processing",
+    "artifical intelligence",
+    "natural language understanding",
+    "natural language generation",
+    "NLP",
+    "NLU",
+    "NLG",
+    "sentiment analysis",
+    "classifier",
+    "logistic regression",
+    "Natural",
+    "entity extraction",
+    "named entity recognition",
+    "chatbot",
+    "bot"
+  ],
+  "author": "dibode

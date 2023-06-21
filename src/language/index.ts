@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) AXA Group Operations Spain S.A.
  *
@@ -21,8 +22,8 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { NeuralNetwork } from '@nlpjs/neural'
+import Language from '@nlpjs/language';
 
 export {
-  NeuralNetwork,
+  Language,
 };

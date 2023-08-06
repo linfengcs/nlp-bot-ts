@@ -24,4 +24,15 @@
 import NlgManagerBase from '@nlpjs/nlg';
 import { Evaluator } from '@nlpjs/evaluator';
 
-class NlgManager extend
+class NlgManager extends NlgManagerBase {
+  constructor(settings: any = {}, container?: any) {
+    super(settings, container);
+    this.container.register('Evaluator', Evaluator, true);
+  }
+
+  addAnswer(locale: string, intent: string, answer: any, opts?: any): void {
+    return this.add(locale, intent, answer, opts);
+  }
+
+  async findAnswer(locale: string, intent: string, context: any, settings?: any): Promise<{ response: any } | undefined> {
+    const answer = await

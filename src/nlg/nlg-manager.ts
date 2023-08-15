@@ -64,4 +64,14 @@ class NlgManager extends NlgManagerBase {
     if (typeof locale === 'string') {
       const found = super.findAllAnswers(locale, intent, context);
       const filtered = super.filterAnswers(found);
-      return filtered.answers.map((x: {answer: string, opts: s
+      return filtered.answers.map((x: {answer: string, opts: string}) => ({
+        response: x.answer,
+        opts: x.opts,
+      }));
+    }
+    return super.findAllAnswers(locale);
+  }
+}
+
+export default NlgManager;
+

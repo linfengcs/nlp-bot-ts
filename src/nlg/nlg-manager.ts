@@ -53,4 +53,15 @@ class NlgManager extends NlgManagerBase {
     if (evaluator) {
       return (
           !condition ||
-   
+          condition === '' ||
+          evaluator.evaluate(condition, context) === true
+      );
+    }
+    return true;
+  }
+
+  findAllAnswers(locale?: string, intent?: string, context?: any): {answer: string, opts: string}[] | any {
+    if (typeof locale === 'string') {
+      const found = super.findAllAnswers(locale, intent, context);
+      const filtered = super.filterAnswers(found);
+      return filtered.answers.map((x: {answer: string, opts: s

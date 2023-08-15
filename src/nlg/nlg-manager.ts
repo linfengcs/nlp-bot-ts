@@ -35,4 +35,22 @@ class NlgManager extends NlgManagerBase {
   }
 
   async findAnswer(locale: string, intent: string, context: any, settings?: any): Promise<{ response: any } | undefined> {
-    const answer = await
+    const answer = await this.find(locale, intent, context, settings);
+    if (!answer.answer) {
+      return undefined;
+    }
+    return {
+      response: answer.answer,
+    };
+  }
+
+  removeAnswer(locale: string, intent: string, answer: any, opts?: any): void {
+    return this.remove(locale, intent, answer, opts);
+  }
+
+  isValid(condition: string | undefined, context: any): boolean {
+    const evaluator = this.container.get('Evaluator');
+    if (evaluator) {
+      return (
+          !condition ||
+   

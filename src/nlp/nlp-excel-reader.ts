@@ -7,4 +7,22 @@ class NlpExcelReader {
 
   constructor(manager: NlpManager) {
     this.manager = manager;
-    this.xdoc
+    this.xdoc = new XDoc();
+  }
+
+  load(filename: string): void {
+    this.xdoc.read(filename);
+    this.loadSettings();
+    this.loadLanguages();
+    this.loadNamedEntities();
+    this.loadRegexEntities();
+    this.loadIntents();
+    this.loadResponses();
+  }
+
+  loadSettings(): void {}
+
+  loadLanguages(): void {
+    const rows: Record<string, string>[] = this.xdoc.getTable('Languages').data;
+    rows.forEach((row: Record<string, string>) => {
+      this.manager.addLanguage(row.iso2);

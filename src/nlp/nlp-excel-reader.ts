@@ -39,4 +39,16 @@ class NlpExcelReader {
 
   loadRegexEntities(): void {
     const table = this.xdoc.getTable('Regex Entities');
-    if (tab
+    if (table) {
+      const rows: Record<string, string>[] = table.data;
+      rows.forEach((row: Record<string, string>) => {
+        const languages = row.language.split(',').map((x) => x.trim());
+        this.manager.addRegexEntity(row.entity, languages, row.regex);
+      });
+    }
+  }
+
+  loadIntents(): void {
+    const rows: Record<string, string>[] = this.xdoc.getTable('Intents').data;
+    rows.forEach((row: Record<string, string>) => {
+      this.manager.addDo

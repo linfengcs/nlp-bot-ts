@@ -51,4 +51,17 @@ class NlpExcelReader {
   loadIntents(): void {
     const rows: Record<string, string>[] = this.xdoc.getTable('Intents').data;
     rows.forEach((row: Record<string, string>) => {
-      this.manager.addDo
+      this.manager.addDocument(row.language, row.utterance, row.intent);
+    });
+  }
+
+  loadResponses(): void {
+    const rows: Record<string, string>[] = this.xdoc.getTable('Responses').data;
+    rows.forEach((row: Record<string, string>) => {
+      this.manager.addAnswer(row.language, row.intent, row.response, row.condition);
+      // this.manager.addAnswer(row.language, row.intent, row.response, row.condition, row.url);
+    });
+  }
+}
+
+export default NlpExcelReader;

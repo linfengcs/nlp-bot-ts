@@ -10,4 +10,27 @@ import { fs as requestfs } from '@nlpjs/request';
 import { SentimentManager } from '../sentiment';
 import NlpExcelReader from './nlp-excel-reader';
 
-export interface NlpManag
+export interface NlpManagerSettings {
+  container?: any
+  languages?: string[]
+
+  nlu?: {
+    log?: boolean
+  }
+  ner?: {
+    useDuckling?: boolean
+    ducklingUrl?: string
+    locale?: string
+    threshold?: number
+  }
+  action?: {
+    [key: string]: (params: any, context: any, result: any) => Promise<void> | void
+  }
+  settings?: any
+  forceNER?: boolean
+  processTransformer?: (result: any) => any
+}
+
+class NlpManager {
+  private readonly settings: NlpManagerSettings;
+  private container: 

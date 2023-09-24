@@ -33,4 +33,19 @@ export interface NlpManagerSettings {
 
 class NlpManager {
   private readonly settings: NlpManagerSettings;
-  private container: 
+  private container: any;
+  private nlp: any;
+  private sentimentManager: SentimentManager;
+
+  constructor(settings: NlpManagerSettings) {
+    this.settings = settings;
+    if (!this.settings.container) {
+      this.settings.container = containerBootstrap();
+    }
+    this.container = this.settings.container;
+    this.container.registerConfiguration('ner', {
+      entityPreffix: '%',
+      entitySuffix: '%',
+    });
+    this.container.register('fs', requestfs);
+    this.container.register(

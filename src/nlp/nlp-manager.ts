@@ -48,4 +48,13 @@ class NlpManager {
       entitySuffix: '%',
     });
     this.container.register('fs', requestfs);
-    this.container.register(
+    this.container.register('Language', Language, false);
+    this.container.use(LangAll);
+    this.container.use(Evaluator);
+    this.container.use(Template);
+    this.nlp = new Nlp(this.settings);
+    this.sentimentManager = new SentimentManager();
+    if (this.settings.ner) {
+      if (this.settings.ner.ducklingUrl || this.settings.ner.useDuckling) {
+        const builtin = new BuiltinDuckling(this.settings.ner);
+        this.container.register('extract-builtin-??', builti

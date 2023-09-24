@@ -57,4 +57,19 @@ class NlpManager {
     if (this.settings.ner) {
       if (this.settings.ner.ducklingUrl || this.settings.ner.useDuckling) {
         const builtin = new BuiltinDuckling(this.settings.ner);
-        this.container.register('extract-builtin-??', builti
+        this.container.register('extract-builtin-??', builtin, true);
+      } else {
+        const builtin = new BuiltinMicrosoft(this.settings.ner);
+        this.container.register('extract-builtin-??', builtin, true);
+      }
+    } else {
+      const builtin = new BuiltinMicrosoft(this.settings.ner);
+      this.container.register('extract-builtin-??', builtin, true);
+    }
+  }
+
+  public addDocument(locale: string, utterance: string, intent: string) {
+    return this.nlp.addDocument(locale, utterance, intent);
+  }
+
+  public rem

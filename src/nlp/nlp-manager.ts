@@ -104,4 +104,20 @@ class NlpManager {
       intent: string,
       action: string,
       parameters: string[],
-      fn?: (params: any, context: any, res
+      fn?: (params: any, context: any, result: any) => Promise<void> | void
+  ) {
+    if (!fn) {
+      fn = this.settings.action ? this.settings.action[action] : undefined;
+    }
+    return this.nlp.addAction(intent, action, parameters, fn);
+  }
+
+  getActions(intent: string): string[] {
+    return this.nlp.getActions(intent);
+  }
+
+  removeAction(intent: string, action: string, parameters?: string[]): boolean {
+    return this.nlp.removeAction(intent, action, parameters);
+  }
+
+  rem

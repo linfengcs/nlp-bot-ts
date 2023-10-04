@@ -72,4 +72,17 @@ class NlpManager {
     return this.nlp.addDocument(locale, utterance, intent);
   }
 
-  public rem
+  public removeDocument(locale: string, utterance: string, intent: string) {
+    return this.nlp.removeDocument(locale, utterance, intent);
+  }
+
+  public addLanguage(locale: string) {
+    return this.nlp.addLanguage(locale);
+  }
+
+  public removeLanguage(locale: string) {
+    return this.nlp.removeLanguage(locale);
+  }
+
+  public assignDomain(locale: string, intent: string, domain: string) {
+    return this.nlp.assignDomain(locale

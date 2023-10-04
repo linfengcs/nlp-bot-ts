@@ -85,4 +85,23 @@ class NlpManager {
   }
 
   public assignDomain(locale: string, intent: string, domain: string) {
-    return this.nlp.assignDomain(locale
+    return this.nlp.assignDomain(locale, intent, domain);
+  }
+
+  public getIntentDomain(locale: string, intent: string): string {
+    return this.nlp.getIntentDomain(locale, intent);
+  }
+
+  public getDomains(): string[] {
+    return this.nlp.getDomains();
+  }
+
+  public guessLanguage(text: string): string {
+    return this.nlp.guessLanguage(text);
+  }
+
+  public addAction(
+      intent: string,
+      action: string,
+      parameters: string[],
+      fn?: (params: any, context: any, res

@@ -120,4 +120,17 @@ class NlpManager {
     return this.nlp.removeAction(intent, action, parameters);
   }
 
-  rem
+  removeActions(intent: string): boolean {
+    return this.nlp.removeActions(intent);
+  }
+
+  addAnswer(locale: string, intent: string, answer: string, opts?: any): string {
+    return this.nlp.addAnswer(locale, intent, answer, opts);
+  }
+
+  removeAnswer(locale: string, intent: string, answer: string, opts?: any): boolean {
+    return this.nlp.removeAnswer(locale, intent, answer, opts);
+  }
+
+  findAllAnswers(locale: string, intent: string): string[] {
+    return this

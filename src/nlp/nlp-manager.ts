@@ -133,4 +133,12 @@ class NlpManager {
   }
 
   findAllAnswers(locale: string, intent: string): string[] {
-    return this
+    return this.nlp.findAllAnswers(locale, intent);
+  }
+
+  async getSentiment(locale: string, utterance: string): Promise<{ numHits: number; score: number; comparative: number; language: string; numWords: number; type: string; vote: any }> {
+    const sentiment = await this.nlp.getSentiment(locale, utterance);
+    return this.sentimentManager.translate(sentiment.sentiment);
+  }
+
+  addNamedEntityText(entityName: string, optionName: string, languages: string[], texts: string[]): voi

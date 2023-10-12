@@ -163,3 +163,15 @@ class NlpManager {
 
   addAfterCondition(locale: string, name: string, words: string[], opts?: any): void {
     return this.nlp.addNerAfterCondition(locale, name, words, opts);
+  }
+
+  addAfterFirstCondition(locale: string, name: string, words: string[], opts?: any): void {
+    return this.nlp.addNerAfterFirstCondition(locale, name, words, opts);
+  }
+
+  addAfterLastCondition(locale: string, name: string, words: string[], opts?: any): void {
+    return this.nlp.addNerAfterLastCondition(locale, name, words, opts);
+  }
+
+  addBeforeCondition(locale: string, name: string, words: string[], opts?: any): void {
+    return this.nlp.addNerBeforeCondition(locale, name, words, opts);

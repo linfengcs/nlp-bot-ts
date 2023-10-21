@@ -202,4 +202,19 @@ class NlpManager {
 
   async process(locale?: string, utterance?: string, context?: Record<string, unknown>, settings?: Record<string, unknown>): Promise<any> {
     const result = await this.nlp.process(locale, utterance, context, settings);
- 
+    if (this.settings.processTransformer) {
+      return this.settings.processTransformer(result);
+    }
+    return result;
+  }
+
+  extractEntities(locale: string, utterance: string, context?: Record<string, unknown>, settings?: Record<string, unknown>): Promise<any> {
+    return this.nlp.extractEntities(locale, utterance, context, settings);
+  }
+
+  toObj(): any {
+    return this.nlp.toJSON();
+  }
+
+  fromObj(obj: any): any {
+    return this.nlp.fromJS

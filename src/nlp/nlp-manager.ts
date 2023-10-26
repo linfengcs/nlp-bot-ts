@@ -232,4 +232,17 @@ class NlpManager {
 
   /**
    * Load NLP manager information from a string.
-   * @param {Stri
+   * @param {String|Object} data JSON string or object to load NLP manager information from.
+   */
+  import(data: string | Record<string, unknown>): void {
+    const clone = typeof data === 'string' ? JSON.parse(data) : data;
+    this.fromObj(clone);
+  }
+
+  /**
+   * Save the NLP manager information into a file.
+   * @param {String} srcFileName Filename for saving the NLP manager.
+   * @param minified
+   */
+  save(srcFileName?: string, minified = false): void {
+    const fileName = src

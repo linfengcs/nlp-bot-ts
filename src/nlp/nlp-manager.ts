@@ -245,4 +245,22 @@ class NlpManager {
    * @param minified
    */
   save(srcFileName?: string, minified = false): void {
-    const fileName = src
+    const fileName = srcFileName || 'model.nlp';
+    fs.writeFileSync(fileName, this.export(minified), 'utf8');
+  }
+
+  /**
+   * Load the NLP manager information from a file.
+   * @param srcFileName
+   */
+  load(srcFileName?: string): void {
+    const fileName = srcFileName || 'model.nlp';
+    const data = fs.readFileSync(fileName, 'utf8');
+    this.import(data);
+  }
+
+  /**
+   * Load the NLP manager information from an Excel file.
+   * @param fileName
+   */
+  loadExcel(fileName = 'model

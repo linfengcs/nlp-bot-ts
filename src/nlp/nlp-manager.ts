@@ -263,4 +263,21 @@ class NlpManager {
    * Load the NLP manager information from an Excel file.
    * @param fileName
    */
-  loadExcel(fileName = 'model
+  loadExcel(fileName = 'model.xls'): void {
+    const reader = new NlpExcelReader(this);
+    reader.load(fileName);
+  }
+
+  async testCorpus(corpus: any): Promise<any> {
+    const { data } = corpus;
+    const result = {
+      total: 0,
+      good: 0,
+      bad: 0,
+    };
+    const promises = [];
+    const intents = [];
+    for (let i = 0; i < data.length; i += 1) {
+      const intentData = data[i];
+      const { tests } = intentData;
+      for (let j = 0; j < tests.length; j +

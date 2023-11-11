@@ -280,4 +280,24 @@ class NlpManager {
     for (let i = 0; i < data.length; i += 1) {
       const intentData = data[i];
       const { tests } = intentData;
-      for (let j = 0; j < tests.length; j +
+      for (let j = 0; j < tests.length; j += 1) {
+        promises.push(this.process(corpus.locale.slice(0, 2), tests[j]));
+        intents.push(intentData.intent);
+      }
+    }
+    result.total += promises.length;
+    const results = await Promise.all(promises);
+
+    for (let i = 0; i < results.length; i += 1) {
+      const current = results[i];
+      if (current.intent === intents[i]) {
+        result.good += 1;
+      } else {
+        result.bad += 1;
+      }
+    }
+    return result
+  }
+
+  addCorpora(corpora: any): void {
+    this.nlp.addCor

@@ -300,4 +300,19 @@ class NlpManager {
   }
 
   addCorpora(corpora: any): void {
-    this.nlp.addCor
+    this.nlp.addCorpora(corpora);
+  }
+
+  addCorpus(corpus: any): void {
+    this.nlp.addCorpus(corpus);
+  }
+
+  async trainAndEvaluate(fileName: string | object): Promise<any> {
+    let corpus = fileName;
+    if (typeof fileName === 'string') {
+      const nlpfs = this.container.get('fs');
+      const fileData = await nlpfs.readFile(fileName);
+      if (!fileData) {
+        throw new Error(`Corpus not found "${fileName}"`);
+      }
+      corpus = typeof fileData === 'string' ? JSON.parse(fileData) : fileD

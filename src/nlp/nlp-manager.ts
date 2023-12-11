@@ -315,4 +315,12 @@ class NlpManager {
       if (!fileData) {
         throw new Error(`Corpus not found "${fileName}"`);
       }
-      corpus = typeof fileData === 'string' ? JSON.parse(fileData) : fileD
+      corpus = typeof fileData === 'string' ? JSON.parse(fileData) : fileData;
+    }
+    this.nlp.addCorpus(corpus);
+    await this.train();
+    return this.testCorpus(corpus);
+  }
+}
+
+export default NlpManager;

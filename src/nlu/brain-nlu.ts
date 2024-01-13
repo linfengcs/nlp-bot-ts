@@ -18,4 +18,22 @@
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR 
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+import { containerBootstrap } from '@nlpjs/core-loader';
+import { LangAll } from '@nlpjs/lang-all';
+import { NluNeural } from '@nlpjs/nlu';
+
+class BrainNLU {
+  private container: any;
+  private nlu: NluNeural | undefined;
+  private readonly corpus: any[];
+  private readonly settings: any;
+
+  constructor(settings: any = {}) {
+    this.settings = settings;
+    if (!this.settings.container) {
+      this.settings.container = containerBootstrap();
+    }
+    

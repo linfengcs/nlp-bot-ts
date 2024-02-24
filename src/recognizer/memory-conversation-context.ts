@@ -32,4 +32,18 @@ class MemoryConversationContext extends ConversationContext {
 
   /**
    * Constructor of the class.
-   * @param {Object} settings Set
+   * @param {Object} settings Settings for the instance.
+   */
+  constructor(settings: object) {
+    super(settings);
+    this.conversationContexts = {};
+  }
+
+  /**
+   * Gets the conversation context from the session.
+   * @param {Object} session Chatbot session of the conversation.
+   * @returns {Promise<Object>} Promise to resolve the conversation context.
+   */
+  public getConversationContext(session: Session): Promise<Object> {
+    return new Promise((resolve, reject) => {
+      co

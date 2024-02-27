@@ -59,4 +59,15 @@ class MemoryConversationContext extends ConversationContext {
 
   public setConversationContext(session: Session, context: any): Promise<void> {
     return new Promise((resolve, reject) => {
-      const conversationId = this.g
+      const conversationId = this.getConversationId(session);
+      if (!conversationId) {
+        return reject(new Error('No conversation id found'));
+      }
+      this.conversationContexts[conversationId] = context;
+      return resolve();
+    });
+  }
+}
+
+export default MemoryConversationContext;
+

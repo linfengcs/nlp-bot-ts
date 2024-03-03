@@ -21,4 +21,18 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-impo
+import { SentimentAnalyzer as SentimentAnalyzerBase } from '@nlpjs/sentiment';
+import { LangAll } from '@nlpjs/lang-all';
+import { Nlu } from '@nlpjs/nlu';
+import { Container } from '@nlpjs/core'
+
+class SentimentAnalyzer extends SentimentAnalyzerBase {
+  constructor(settings = {}, container?: Container) {
+    super(settings, container);
+    this.container.use(LangAll);
+    this.container.use(Nlu);
+  }
+
+  async getSentiment(utterance: string, locale = 'en', settings: [key: string]) {
+    const input = {
+      u

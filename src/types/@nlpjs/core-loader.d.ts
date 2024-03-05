@@ -99,3 +99,10 @@ declare module '@nlpjs/core-loader' {
         Stemmer,
         Stopwords,
         Tokenizer,
+        Timer,
+        logger,
+        MemoryStorage,
+        uuid,
+        Context,
+    };
+}

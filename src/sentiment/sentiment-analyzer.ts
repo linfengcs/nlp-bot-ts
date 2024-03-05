@@ -35,4 +35,13 @@ class SentimentAnalyzer extends SentimentAnalyzerBase {
 
   async getSentiment(utterance: string, locale = 'en', settings: [key: string]) {
     const input = {
-      u
+      utterance,
+      locale,
+      ...settings,
+    };
+    const result = await this.process(input);
+    return result.sentiment;
+  }
+}
+
+export default SentimentAnalyzer;

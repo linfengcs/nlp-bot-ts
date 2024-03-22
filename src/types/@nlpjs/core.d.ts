@@ -22,4 +22,8 @@
  */
 
 declare module '@nlpjs/core' {
-    export type Language = 'af' | 'ar' | 'hy' | 'bn' | 'bg' | 'ca' | 'zh' | 'hr' | 'cs' | 'da' | 'nl' | 'en' | 'eo' | 'et' | 'fi' | 'fr' | 'gl' | 'de' | 'el' | 'gu' | 'he' | 'hi' | 'hu' | 'is' | 'id' | 'ga' | 'it' | 'ja' | 'jv' | 'kn' | 'kk' | 'km' | 'ko' | 'ku' | 'ky' | 'lo' | 'la' | 'lv' | 'lt' | 'lb' | 'mk' | 'm
+    export type Language = 'af' | 'ar' | 'hy' | 'bn' | 'bg' | 'ca' | 'zh' | 'hr' | 'cs' | 'da' | 'nl' | 'en' | 'eo' | 'et' | 'fi' | 'fr' | 'gl' | 'de' | 'el' | 'gu' | 'he' | 'hi' | 'hu' | 'is' | 'id' | 'ga' | 'it' | 'ja' | 'jv' | 'kn' | 'kk' | 'km' | 'ko' | 'ku' | 'ky' | 'lo' | 'la' | 'lv' | 'lt' | 'lb' | 'mk' | 'ms' | 'ml' | 'mr' | 'mn' | 'ne' | 'nb' | 'nn' | 'no' | 'oc' | 'or' | 'fa' | 'pl' | 'pt' | 'pa' | 'ro' | 'ru' | 'gd' | 'sr' | 'si' | 'sk' | 'sl' | 'es' | 'su' | 'sw' | 'sv' | 'tl' | 'ta' | 'tt' | 'te' | 'th' | 'tr' | 'tk' | 'uk' | 'ur' | 'ug' | 'uz' | 'vi' | 'cy' | 'xh' | 'yi' | 'yo' | 'zu';
+    export type Name = string;
+    export type Id = string;
+    export type Words = string[];
+    export type StemmerFunction = (word: string, lang?: Language) =

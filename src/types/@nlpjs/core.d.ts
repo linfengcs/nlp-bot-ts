@@ -26,4 +26,21 @@ declare module '@nlpjs/core' {
     export type Name = string;
     export type Id = string;
     export type Words = string[];
-    export type StemmerFunction = (word: string, lang?: Language) =
+    export type StemmerFunction = (word: string, lang?: Language) => string;
+    export interface TokenizerFunction {
+        (text: string, settings?: any): Promise<string[]>;
+    }
+
+    export interface ContainerOptions {
+        defaultLocale?: Language;
+        locales?: Language[];
+        nluByDomain?: boolean;
+        stemmerOverride?: { [lang: string]: StemmerFunction };
+        tokenizerOverride?: { [lang: string]: TokenizerFunction };
+    }
+
+    export interface Obj {
+        [key: string]: any;
+    }
+
+  

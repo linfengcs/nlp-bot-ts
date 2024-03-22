@@ -43,4 +43,19 @@ declare module '@nlpjs/core' {
         [key: string]: any;
     }
 
-  
+    export interface Stemmer {
+        stem: StemmerFunction;
+    }
+
+    export class BaseStemmer implements Stemmer {
+        stem(word: string, lang?: Language): string;
+    }
+
+    export class Among {
+        constructor(s: string, substring_i: number, result: string, method: number);
+    }
+
+    export function ArrToObj<T extends Obj>(arr: T[], keyField: keyof T): { [key: string]: T };
+
+    export class Clonable<T = any> {
+        constructor(settings?: any, container?: a

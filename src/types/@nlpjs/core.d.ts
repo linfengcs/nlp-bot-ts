@@ -76,4 +76,18 @@ declare module '@nlpjs/core' {
             force?: boolean
         ): void;
 
-        addStemmer(lang: Language, stemmer: StemmerF
+        addStemmer(lang: Language, stemmer: StemmerFunction): void;
+
+        addTokenizer(lang: Language, tokenizer: TokenizerFunction): void;
+
+        addStopword(lang: Language, stopword: string): void;
+
+        getStemmer(lang?: Language): StemmerFunction | undefined;
+
+        getTokenizer(lang?: Language): TokenizerFunction | undefined;
+
+        getStopwords(lang?: Language): string[];
+
+        getDomain(locale: Language, utterance: string): string | undefined;
+
+        addNluDomain(domain: string, lan

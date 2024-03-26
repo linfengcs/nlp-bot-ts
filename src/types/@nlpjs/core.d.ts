@@ -90,4 +90,18 @@ declare module '@nlpjs/core' {
 
         getDomain(locale: Language, utterance: string): string | undefined;
 
-        addNluDomain(domain: string, lan
+        addNluDomain(domain: string, languages: Language[]): void;
+
+        addNluThreshold(domain: string, lang: Language, threshold: number): void;
+
+        addNluModel(domain: string, lang: Language, model: Obj): void;
+
+        processNlu(utterance: string, locale: Language): Promise<Obj>;
+
+        get(id: Id): any;
+
+        use<T>(item: T | { new(container: Container): T }, name?: string, isSingleton?: boolean, onlyIfNotExists?: boolean): string;
+
+        set(id: Id, value: any): void;
+
+        delete(id: 

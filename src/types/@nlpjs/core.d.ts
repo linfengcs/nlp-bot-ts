@@ -104,4 +104,24 @@ declare module '@nlpjs/core' {
 
         set(id: Id, value: any): void;
 
-        delete(id: 
+        delete(id: Id): void;
+
+        has(id: Id): boolean;
+
+        stem(word: string, lang?: Language): string;
+
+        tokenize(str: string, lang?: Language): string[];
+
+        normalize(str: string, lang?: Language): string;
+
+        add(language: Language, name: Name, obj: any): void;
+
+        get(language: Language, name: Name, def?: any): any;
+
+        delete(language: Language, name: Name): void;
+
+        has(language: Language, name: Name): boolean;
+
+        getLanguages(): Language[];
+
+        ge

@@ -158,4 +158,24 @@ declare module '@nlpjs/core' {
 
         get(lang: Language, name: Name, def?: any): any;
 
-        delete(lang: Language, name: Name): vo
+        delete(lang: Language, name: Name): void;
+
+        has(lang: Language, name: Name): boolean;
+
+        normalize(str: string, lang?: Language): string;
+
+        toJSON(): Obj;
+
+        fromJSON(obj: Obj): void;
+    }
+
+    export function ObjToArr<T extends Obj>(obj: T): T[];
+
+    export class Stemmer extends BaseStemmer {
+        constructor(lang: Language, fn?: StemmerFunction);
+    }
+
+    export class Stopwords {
+        add(word: string, lang?: Language): void;
+
+        remove(word: string, lang?: Language): voi

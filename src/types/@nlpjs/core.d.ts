@@ -143,4 +143,19 @@ declare module '@nlpjs/core' {
 
     export function compareWildcards(str: string, pattern: string): boolean;
 
-    export function loadEnv
+    export function loadEnv(env: string): void;
+
+    export function listFiles(dir: string): Promise<string[]>;
+
+    export function listFilesAbsolute(dir: string): Promise<string[]>;
+
+    export function getAbsolutePath(path: string): string;
+
+    export class Normalizer {
+        constructor(options?: any);
+
+        add(lang: Language, name: Name, obj: any): void;
+
+        get(lang: Language, name: Name, def?: any): any;
+
+        delete(lang: Language, name: Name): vo

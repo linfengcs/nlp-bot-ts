@@ -124,4 +124,23 @@ declare module '@nlpjs/core' {
 
         getLanguages(): Language[];
 
-        ge
+        getNames(lang: Language): Name[];
+
+        toJSON(): Obj;
+
+        fromJSON(obj: Obj): void;
+    }
+
+    export const defaultContainer: Container;
+
+    export function hasUnicode(str: string): boolean;
+
+    export function unicodeToArray(str: string): string[];
+
+    export function asciiToArray(str: string): string[];
+
+    export function stringToArray(str: string): string[];
+
+    export function compareWildcards(str: string, pattern: string): boolean;
+
+    export function loadEnv

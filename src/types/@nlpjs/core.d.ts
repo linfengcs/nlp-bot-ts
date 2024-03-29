@@ -195,4 +195,21 @@ declare module '@nlpjs/core' {
         addRule(rule: any): void;
         addException(exception: string): void;
         addChar(char: string): void;
-        addToken(token: string):
+        addToken(token: string): void;
+        removeRule(rule: any): void;
+        removeException(exception: string): void;
+        removeChar(char: string): void;
+        removeToken(token: string): void;
+        normalize(str: string): string;
+        toJSON(): Obj;
+        fromJSON(obj: Obj): void;
+    }
+
+    export class Timer {
+        start(): void;
+
+        stop(): void;
+
+        getTime(): number;
+
+        static measure(fn: Function, label?: string): 

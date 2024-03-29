@@ -178,4 +178,21 @@ declare module '@nlpjs/core' {
     export class Stopwords {
         add(word: string, lang?: Language): void;
 
-        remove(word: string, lang?: Language): voi
+        remove(word: string, lang?: Language): void;
+
+        exists(word: string, lang?: Language): boolean;
+
+        get(lang?: Language): string[];
+
+        toJSON(): Obj;
+
+        fromJSON(obj: Obj): void;
+    }
+
+    export class Tokenizer {
+        constructor(container?: Container, shouldNormalize?: boolean);
+        tokenize(str: string): string[];
+        addRule(rule: any): void;
+        addException(exception: string): void;
+        addChar(char: string): void;
+        addToken(token: string):

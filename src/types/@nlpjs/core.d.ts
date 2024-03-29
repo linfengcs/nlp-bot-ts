@@ -212,4 +212,34 @@ declare module '@nlpjs/core' {
 
         getTime(): number;
 
-        static measure(fn: Function, label?: string): 
+        static measure(fn: Function, label?: string): number;
+    }
+
+    export const logger: any;
+
+    export class MemoryStorage {
+        data: Obj;
+
+        constructor();
+
+        set(id: Id, value: any): void;
+
+        get(id: Id): any;
+
+        delete(id: Id): void;
+
+        has(id: Id): boolean;
+
+        keys(): string[];
+    }
+
+    export function uuid(): string;
+
+    export class Context {
+        constructor(obj?: Obj);
+
+        set(name: string, value: any): void;
+
+        get(name: string, def?: any): any;
+
+        has(name: st

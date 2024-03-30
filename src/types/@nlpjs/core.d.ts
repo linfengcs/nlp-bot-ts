@@ -242,4 +242,12 @@ declare module '@nlpjs/core' {
 
         get(name: string, def?: any): any;
 
-        has(name: st
+        has(name: string): boolean;
+
+        delete(name: string): void;
+
+        toJSON(): Obj;
+
+        fromJSON(obj: Obj): void;
+    }
+}

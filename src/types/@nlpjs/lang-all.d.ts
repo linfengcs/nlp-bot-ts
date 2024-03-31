@@ -25,3 +25,9 @@
 declare module "@nlpjs/lang-all" {
     interface LangAll {
         [key: string]: any;
+    }
+
+
+    const LangAll: LangAll;
+    export { LangAll };
+}

@@ -32,4 +32,25 @@ declare module "@nlpjs/language" {
         Devanagari: RegExp;
         jpn: RegExp;
         kor: RegExp;
-        tel:
+        tel: RegExp;
+        tam: RegExp;
+        guj: RegExp;
+        kan: RegExp;
+        mal: RegExp;
+        Myanmar: RegExp;
+        ori: RegExp;
+        pan: RegExp;
+        Ethiopic: RegExp;
+        tha: RegExp;
+        sin: RegExp;
+        ell: RegExp;
+        khm: RegExp;
+        hye: RegExp;
+        sat: RegExp;
+        bod: RegExp;
+    }
+
+    interface Language {
+        readonly scripts: Scripts;
+        readonly languageData: Array<Array<string>>;
+        r

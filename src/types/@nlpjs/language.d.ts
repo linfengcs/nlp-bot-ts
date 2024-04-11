@@ -16,4 +16,20 @@
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETH
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+declare module "@nlpjs/language" {
+    interface Scripts {
+        [key: string]: RegExp;
+        cmn: RegExp;
+        Latin: RegExp;
+        Cyrillic: RegExp;
+        Arabic: RegExp;
+        ben: RegExp;
+        Devanagari: RegExp;
+        jpn: RegExp;
+        kor: RegExp;
+        tel:

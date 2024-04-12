@@ -53,4 +53,10 @@ declare module "@nlpjs/language" {
     interface Language {
         readonly scripts: Scripts;
         readonly languageData: Array<Array<string>>;
-        r
+        readonly data: { [key: string]: { [key: string]: string } };
+    }
+
+
+    const language: Language;
+    export = language;
+}

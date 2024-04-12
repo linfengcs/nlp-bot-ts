@@ -9,4 +9,21 @@ declare module '@nlpjs/neural' {
         momentum?: number;
         callbackPeriod?: number;
         timeout?: number;
-        prax
+        praxisOpts?: PraxisOptions;
+    }
+
+    export interface NeuralNetworkTrainData {
+        input: number[];
+        output: number[];
+    }
+
+    export interface NeuralNetwork {
+        initialize(): void;
+        train(
+            data: NeuralNetworkTrainData[],
+            options?: NeuralNetworkOptions,
+            cb?: () => void
+        ): Promise<TrainingResult>;
+        run(input: number[]): number[];
+        toFunction(): (input: number[]) => number[];
+    }

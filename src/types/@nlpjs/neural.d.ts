@@ -27,3 +27,22 @@ declare module '@nlpjs/neural' {
         run(input: number[]): number[];
         toFunction(): (input: number[]) => number[];
     }
+
+    export interface TrainingResult {
+        error: number;
+        iterations: number;
+        time: number;
+    }
+
+    export interface PraxisOptions {
+        minError?: number;
+        maxIterations?: number;
+        resetOnStuck?: boolean;
+        praxis?: string;
+    }
+
+    export class MLP {
+        constructor(inputSize: number, outputSize: number, hiddenLayers: number[]);
+        initialize(): void;
+        train(
+          

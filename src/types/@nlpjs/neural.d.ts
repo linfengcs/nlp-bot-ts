@@ -45,4 +45,20 @@ declare module '@nlpjs/neural' {
         constructor(inputSize: number, outputSize: number, hiddenLayers: number[]);
         initialize(): void;
         train(
-          
+            data: NeuralNetworkTrainData[],
+            options?: NeuralNetworkOptions,
+            cb?: () => void
+        ): Promise<TrainingResult>;
+        run(input: number[]): number[];
+        toFunction(): (input: number[]) => number[];
+    }
+
+    export class RNNTimeStep {
+        constructor(options: {
+            inputSize: number;
+            hiddenLayers: number[];
+            outputSize: number;
+        });
+        initialize(): void;
+        train(
+      

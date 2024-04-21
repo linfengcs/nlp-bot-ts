@@ -61,4 +61,19 @@ declare module '@nlpjs/neural' {
         });
         initialize(): void;
         train(
-      
+            data: NeuralNetworkTrainData[][],
+            options?: NeuralNetworkOptions,
+            cb?: () => void
+        ): Promise<TrainingResult>;
+        run(input: number[][]): number[][];
+        toFunction(): (input: number[][]) => number[][];
+    }
+
+    export class LSTMTimeStep {
+        constructor(options: {
+            inputSize: number;
+            outputSize: number;
+            memoryCells: number;
+        });
+        initialize(): void;
+        train

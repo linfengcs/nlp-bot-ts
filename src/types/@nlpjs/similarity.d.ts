@@ -17,4 +17,5 @@ declare module '@nlpjs/similarity' {
         constructor(settings?: SpellCheckSettings);
     }
 
-  
+    export { SpellCheck, Similarity, SimilarityResult, SpellCheckSettings };
+}

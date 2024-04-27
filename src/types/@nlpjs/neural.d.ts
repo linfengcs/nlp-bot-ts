@@ -76,4 +76,12 @@ declare module '@nlpjs/neural' {
             memoryCells: number;
         });
         initialize(): void;
-        train
+        train(
+            data: NeuralNetworkTrainData[][],
+            options?: NeuralNetworkOptions,
+            cb?: () => void
+        ): Promise<TrainingResult>;
+        run(input: number[][]): number[][];
+        toFunction(): (input: number[][]) => number[][];
+    }
+}

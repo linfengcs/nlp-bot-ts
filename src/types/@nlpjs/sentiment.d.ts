@@ -5,4 +5,6 @@ declare module '@nlpjs/sentiment' {
         protected container: Container
         constructor(settings?: any, container?: Container)
 
-        protected process(input: any): Promis
+        protected process(input: any): Promise<{sentiment: any}>
+    }
+}

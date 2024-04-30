@@ -15,4 +15,19 @@ declare module '@nlpjs/xtables' {
         static TSV: string;
 
         constructor();
-        load(data: string,
+        load(data: string, type?: string): void;
+        save(type?: string): string;
+        getTable(name: string): XTable;
+        getRows(): Record<string, string>[];
+        addRow(row: Record<string, string>): void;
+        addRows(rows: Record<string, string>[]): void;
+        clearRows(): void;
+    }
+
+    export class XDoc {
+        tables: XDocTable[];
+
+        read(fileName: string): void;
+        getTable(name: string): XDocTable;
+    }
+}

@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) AXA Group Operations Spain S.A.
  *
@@ -21,14 +22,14 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { compile } from '@nlpjs/evaluator'
-
-class Handlebars {
-  static compile(str: string) {
-    return compile(str);
-  }
-}
+import { removeEmojis } from '@nlpjs/emoji'
+import { Evaluator } from '@nlpjs/evaluator'
+import { SpellCheck } from './spell-check'
+import { Handlebars } from './handlebars'
 
 export {
+  removeEmojis,
+  Evaluator,
+  SpellCheck,
   Handlebars,
 };

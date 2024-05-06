@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) AXA Group Operations Spain S.A.
  *
@@ -21,14 +22,13 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { compile } from '@nlpjs/evaluator'
+import { SpellCheck as SpellCheckBase, SpellCheckSettings } from '@nlpjs/similarity';
 
-class Handlebars {
-  static compile(str: string) {
-    return compile(str);
+class SpellCheck extends SpellCheckBase {
+  constructor(settings: SpellCheckSettings = {}) {
+    const features = Array.isArray(settings) ? settings : settings.features;
+    super({ features });
   }
 }
 
-export {
-  Handlebars,
-};
+export { SpellCheck };

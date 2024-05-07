@@ -42,3 +42,23 @@ To use NLP-bot-ts in your Node app:
 Refer to the folder [`/examples/02-qna-classic`](https://github.com/linfengcs/nlp-bot-ts/tree/master/examples/02-qna-classic) for an example.
 
 It demonstrates how to train the bot and save the model to a file. When the bot starts again, the model is loaded instead of being trained again.
+
+Here's a basic way to build your NLP from scratch:
+
+```javascript
+import { NlpManager } from 'nlp-bot-ts';
+
+// Rest of the code
+```
+
+## False Positives
+
+Visit [nlp.js documentation](https://github.com/axa-group/nlp.js).
+
+## Contributors
+
+[![Contributors](https://contributors-img.firebaseapp.com/image?repo=linfengcs/nlp-bot-ts)](https://github.com/linfengcs/nlp-bot-ts/graphs/contributors)
+
+## Who is behind it?
+
+This project was developed by AXA Group Operations Spai

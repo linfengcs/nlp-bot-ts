@@ -25,4 +25,20 @@ NLP-bot-ts is a natural language utility for nodejs. It provides:
 - [Example of use](#example-of-use)
 - [False Positives](#false-positives)
 - [Log Training Progress](#log-training-progress)
-- [Contributors](#cont
+- [Contributors](#contributors)
+- [Who is behind it](#who-is-behind-it-)
+- [License](#license)
+
+## Installation
+
+To use NLP-bot-ts in your Node app:
+
+```bash
+    npm install nlp-bot-ts
+```
+
+## Example of use
+
+Refer to the folder [`/examples/02-qna-classic`](https://github.com/linfengcs/nlp-bot-ts/tree/master/examples/02-qna-classic) for an example.
+
+It demonstrates how to train the bot and save the model to a file. When the bot starts again, the model is loaded instead of being trained again.

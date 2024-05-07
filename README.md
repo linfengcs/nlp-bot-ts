@@ -61,4 +61,12 @@ Visit [nlp.js documentation](https://github.com/axa-group/nlp.js).
 
 ## Who is behind it?
 
-This project was developed by AXA Group Operations Spai
+This project was developed by AXA Group Operations Spain S.A. and is now maintained by linfengcs.
+
+Contact us at [opensource@axa.com](mailto:opensource@axa.com)
+
+## License
+
+Copyright (c) AXA Group Operations Spain S.A.
+
+Permission is granted (free of charge) to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or se
